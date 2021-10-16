@@ -1,0 +1,3 @@
+[submodule "datasets/stormfront/hate-speech-dataset"]
+	path = datasets/stormfront/hate-speech-dataset
+	url = https://github.com/Vicomtech/hate-speech-dataset.git
