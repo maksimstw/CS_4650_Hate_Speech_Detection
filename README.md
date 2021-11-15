@@ -12,7 +12,7 @@ python stormfront.py
 
 ## Method
 We apply our analyses on a fine-tuned BERT model. Our naive baseline would be based on wordremoval. As the model tends to overly rely onidentifier terms, one simple approach wouldbe removing group identifiers altogether. They regularize SOC explanations on the group identifiers. The combined learning objective is written as follows.
-<img src="https://render.githubusercontent.com/render/math?math=\mathcal{L} = \mathcal{L'} + \alpha \sum_{w \in x \cap S}[\phi(w)]^2">
+<img src="https://render.githubusercontent.com/render/math?math= \mathcal{L} = \mathcal{L'} + \alpha \sum_{w \in x \cap S}[\phi(w)]^2">
     where $\mathcal{L'}$ denotes the classification objective, $S$ the set of group names, $x$ the input word sequence, $\phi(w)$ the importance score of the word $w$, and $\alpha$ a hyperparameter for the strength of the regularization. The importance score is calculated as follows.
     $$\phi(p) = E_x[s(x) - s(s \setminus p)]$$
     where $p$ denotes a phrase, $s(x)$ the unnormalize prediction score, and $s(x \setminus p)$ the prediction score with phrase $p$ masked. 
