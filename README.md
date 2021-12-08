@@ -1,8 +1,8 @@
 # CS 4650 Hate Speech Detection Project
-Large pretrained language model such as BERTcan  easily  achieve  state-of-the-art  results  inmost natural language processing tasks. How-ever, for hate speech detection, many classifiersare sensitive to group identifiers which are onlyhate speech in certain contexts.  These termswill be over-associated with hate speech, leading to many false positives during classification. We proposed a novel regularization technique to resolve this issue
+Large pretrained language models such as BERT can  easily  achieve  state-of-the-art  results  in most natural language processing tasks. However, for hate speech detection, many classifiers are sensitive to group identifiers which are only hate speech in certain contexts. These terms will be over-associated with hate speech, leading to many false positives during classification. We propose a novel regularization technique to resolve this issue.
 
 ## Datasets
-We selected two public corpora, GHC (Kennedyet al., 2018) and Stormfront (de Gibert et al., 2018), for our experiments.
+We selected three public corpora, GHC (Kennedy et al., 2018), Stormfront (de Gibert et al., 2018) and Latent Hatred (ElSherief et al., 2021), for our experiments.
 
 To generate `stormfront.tsv`:
 ```
@@ -11,4 +11,4 @@ python stormfront.py
 ```
 
 ## Method
-We apply our analyses on a fine-tuned BERT model. Our naive baseline would be based on wordremoval. As the model tends to overly rely onidentifier terms, one simple approach wouldbe removing group identifiers altogether. Another approach is to use sampling and exclusion (SOC) or the attention scores. By using SOC or the attention scores, we can identify if the model develops spurious relationship amongs certain tokens and the classfication results. This can be used to regularize the model.
+We apply our analyses on a fine-tuned BERT model. Our naive baseline is word removal. As the model tends to over-rely on identifier terms, one simple approach would be removing group identifiers altogether. Another approach is to use sampling and exclusion (SOC) or the attention scores. By using SOC or the attention scores, we can identify if the model develops spurious relationships among certain tokens and the classfication results. This can be used to regularize the model.
