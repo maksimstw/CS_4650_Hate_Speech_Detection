@@ -12,3 +12,6 @@ python stormfront.py
 
 ## Method
 We apply our analyses on a fine-tuned BERT model. Our naive baseline is word removal. As the model tends to over-rely on identifier terms, one simple approach would be removing group identifiers altogether. Another approach is to use sampling and exclusion (SOC) or the attention scores. By using SOC or the attention scores, we can identify if the model develops spurious relationships among certain tokens and the classfication results. This can be used to regularize the model.
+
+## Running experiments
+Use `123` to train and obtain the attention scores. Use `345` to select a curated list of token pairs. 
